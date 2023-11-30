@@ -59,5 +59,13 @@ async def user(user: User):
         users_list.append(user)
     else:
         return "Error: el usuario ya existe"
+    
+
+@app.put("/user/")
+async def user(user: User):
+    for Index,UserSeach in enumerate(users_list):
+        if(UserSeach.id == user.id):
+            users_list[Index] = user
+
 
     
